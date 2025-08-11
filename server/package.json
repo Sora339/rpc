@@ -1,0 +1,30 @@
+{
+  "name": "rpc-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "gen": "buf generate",
+    "lint:proto": "buf lint"
+  },
+  "dependencies": {
+    "@connectrpc/connect": "^1.4.0",
+    "@connectrpc/connect-fastify": "^1.4.0",
+    "@connectrpc/connect-node": "^1.4.0",
+    "@hono/node-server": "^1.18.1",
+    "hono": "^4.9.0",
+    "rpc-monorepo": "file:.."
+  },
+  "devDependencies": {
+    "@bufbuild/buf": "^1.50.0",
+    "@bufbuild/protobuf": "^1.10.1",
+    "@bufbuild/protoc-gen-es": "^1.10.1",
+    "@connectrpc/protoc-gen-connect-es": "^1.6.1",
+    "@types/node": "^20.14.11",
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.4"
+  }
+}
