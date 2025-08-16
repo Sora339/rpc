@@ -80,3 +80,140 @@ export class SayResponse extends Message<SayResponse> {
   }
 }
 
+/**
+ * 新しいメッセージ型を追加して型共有を実演
+ *
+ * @generated from message connectrpc.eliza.v1.User
+ */
+export class User extends Message<User> {
+  /**
+   * @generated from field: int32 id = 1;
+   */
+  id = 0;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string email = 3;
+   */
+  email = "";
+
+  /**
+   * @generated from field: bool is_active = 4;
+   */
+  isActive = false;
+
+  constructor(data?: PartialMessage<User>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "connectrpc.eliza.v1.User";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "is_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): User {
+    return new User().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): User {
+    return new User().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): User {
+    return new User().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: User | PlainMessage<User> | undefined, b: User | PlainMessage<User> | undefined): boolean {
+    return proto3.util.equals(User, a, b);
+  }
+}
+
+/**
+ * @generated from message connectrpc.eliza.v1.GetUserRequest
+ */
+export class GetUserRequest extends Message<GetUserRequest> {
+  /**
+   * @generated from field: int32 user_id = 1;
+   */
+  userId = 0;
+
+  constructor(data?: PartialMessage<GetUserRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "connectrpc.eliza.v1.GetUserRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUserRequest {
+    return new GetUserRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetUserRequest {
+    return new GetUserRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUserRequest {
+    return new GetUserRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetUserRequest | PlainMessage<GetUserRequest> | undefined, b: GetUserRequest | PlainMessage<GetUserRequest> | undefined): boolean {
+    return proto3.util.equals(GetUserRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message connectrpc.eliza.v1.GetUserResponse
+ */
+export class GetUserResponse extends Message<GetUserResponse> {
+  /**
+   * @generated from field: connectrpc.eliza.v1.User user = 1;
+   */
+  user?: User;
+
+  /**
+   * @generated from field: bool found = 2;
+   */
+  found = false;
+
+  constructor(data?: PartialMessage<GetUserResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "connectrpc.eliza.v1.GetUserResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user", kind: "message", T: User },
+    { no: 2, name: "found", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUserResponse {
+    return new GetUserResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetUserResponse {
+    return new GetUserResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUserResponse {
+    return new GetUserResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetUserResponse | PlainMessage<GetUserResponse> | undefined, b: GetUserResponse | PlainMessage<GetUserResponse> | undefined): boolean {
+    return proto3.util.equals(GetUserResponse, a, b);
+  }
+}
+

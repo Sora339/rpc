@@ -9,6 +9,24 @@ message SayResponse {
   string sentence = 1;
 }
 
+// 新しいメッセージ型を追加して型共有を実演
+message User {
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+  bool is_active = 4;
+}
+
+message GetUserRequest {
+  int32 user_id = 1;
+}
+
+message GetUserResponse {
+  User user = 1;
+  bool found = 2;
+}
+
 service ElizaService {
   rpc Say(SayRequest) returns (SayResponse) {}
+  rpc GetUser(GetUserRequest) returns (GetUserResponse) {}
 }
